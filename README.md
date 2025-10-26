@@ -7,3 +7,7 @@ NOTE: The bit rate goes as high as the uploaded video or yt-dlp limits
 # TL;DL
 
 Easier yt-dlp just for music
+
+# REQUIREMENTS
+
+Most importantly `yt-dlp@latest` but also `nim@^2.2.4`
