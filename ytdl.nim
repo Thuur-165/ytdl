@@ -12,10 +12,6 @@ when not defined(android):
     sleep(2000)
     quit("Got clicked twice... :/", 1)
 
-# NOTE: On Android, lots of warnings shut off because some libraries aren't there
-when defined(android):
-  discard execShellCmd("clear")
-
 # End of QOL
 
 let baseDir: string = getCurrentDir()
