@@ -1,12 +1,12 @@
-import std/[os, strutils]
+import os, strutils
 
 # QOL Features:
 
 # Ensure this program won't be run by double clicking
-# NOTE: On Android, this program can only be run eith Termux or other terminal emulator
+# NOTE: On Android, this program can only be run eith Termux or other terminal emulators
 # NOTE: thus making this block useless, so by including `not defined(android) we increase performance
 when not defined(android):
-  import std/terminal
+  import terminal
   if not isatty(stdin):
     echo "THIS PROGRAM IS NOT SUPPOSED TO BE DOUBLE CLICKED!!"
     sleep(2000)
@@ -95,13 +95,13 @@ proc processInput(input: string, moveAfter: bool = false) =
 var moveAfter: bool = false
 var inputArg: string = ""
 
-# Checa argumentos simples
+# Simple arg parser
 if paramCount() > 0:
   for i in 1..paramCount():
     let arg: string = paramStr(i)
     if arg == "--mv" or arg == "--move":
       moveAfter = true
-    elif arg.len > 0 and arg[0] != '-':  # Se não começa com -, é o input
+    elif arg.len > 0 and arg[0] != '-':  # Is the input
       inputArg = arg
 
 if inputArg == "":
